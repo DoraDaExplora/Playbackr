@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import s from './Landing.module.scss';
 
 export const Landing = () => {
@@ -10,6 +12,7 @@ export const Landing = () => {
         </h1>
         <h2>Generate dynamic Spotify playback pages for your stream.</h2>
         {/*TODO: add the "Login with Spotify" button here.*/}
+        <Link to="/now-playing">Test link</Link>
       </div>
 
       <div className={s.LandingContainer}>
