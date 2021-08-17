@@ -1,0 +1,7 @@
+export const storeName = 'MAIN';
+
+export enum EUserActionsTypes {
+  USER_LOAD_REQUEST = 'MAIN/USER_LOAD_REQUEST',
+  USER_LOAD_SUCCESS = 'MAIN/USER_LOAD_SUCCESS',
+  USER_LOAD_FAILURE = 'MAIN/USER_LOAD_FAILURE',
+}
