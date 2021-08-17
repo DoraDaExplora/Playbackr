@@ -9,6 +9,7 @@ export const Landing = () => {
           Playbackr<span className={s.LandingHighlight}>.</span>
         </h1>
         <h2>Generate dynamic Spotify playback pages for your stream.</h2>
+        {/*TODO: add the "Login with Spotify" button here.*/}
       </div>
 
       <div className={s.LandingContainer}>
@@ -36,6 +37,17 @@ export const Landing = () => {
         <p>
           We do not store your data in between sessions. We also can't access your data without your own consent, so
           don't worry about that.
+        </p>
+      </div>
+
+      <div className={s.LandingContainer}>
+        <h2>
+          Usage<span className={s.LandingHighlight}>.</span>
+        </h2>
+        <p>Simply login to Spotify here, create a browser-type source in your broadcasting source and navigate here.</p>
+        <p>
+          Playbackr<span className={s.LandingHighlight}>.</span> works best if you match your stream resolution to your
+          browser source resolution.
         </p>
       </div>
     </div>
