@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { fontSettingsSelector, playbackSelector } from '../../Store/selectors';
+import { playbackSelector, settingsSelector } from '../../Store/selectors';
 import SpotifyIcon from '../../../Assets/img/SpotifyIconBlack.png';
 
 import s from './Playback.module.scss';
 
 export const Playback = () => {
-  const playbackColor = useSelector(fontSettingsSelector);
-  const { isPlaying, artist, song, album, artwork, showArtwork } = useSelector(playbackSelector);
+  const { isPlaying, artist, song, album, artwork } = useSelector(playbackSelector);
+  const { showArtwork, playbackColor } = useSelector(settingsSelector);
 
   const userStyles = {
     color: playbackColor,

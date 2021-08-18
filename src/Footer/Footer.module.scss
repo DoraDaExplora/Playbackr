@@ -1,5 +1,6 @@
 .Footer {
   display: flex;
+  flex-direction: row;
   width: 100%;
 
   justify-content: center;
@@ -9,4 +10,10 @@
 
   background-color: var(--base-black);
   color: var(--base-white);
+
+  img {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+  }
 }
