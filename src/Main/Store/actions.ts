@@ -14,3 +14,7 @@ export const userLoad = () => async (dispatch: TDispatch) => {
 export const changeShowFooter = (showFooter: boolean) => (dispatch: TDispatch) => {
   dispatch({ type: ESettingsActionsTypes.SETTINGS_SHOW_FOOTER, payload: showFooter });
 };
+
+export const changeFontColor = (newColor: string) => (dispatch: TDispatch) => {
+  dispatch({ type: ESettingsActionsTypes.SETTINGS_CHANGE_COLOR, payload: newColor });
+};

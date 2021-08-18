@@ -16,6 +16,14 @@ interface MainStore {
     showPlaceholderSubtitle: boolean;
     placeholderSubtitle: string;
     showFooter: boolean;
+    showArtwork: boolean;
+  };
+  playback: {
+    isPlaying: boolean;
+    artist: string;
+    album: string;
+    song: string;
+    artwork: string;
   };
 }
 
@@ -34,6 +42,14 @@ export const initialState: MainStore = {
     showPlaceholderSubtitle: true,
     placeholderSubtitle: 'Me three.',
     showFooter: true,
+    showArtwork: true,
+  },
+  playback: {
+    isPlaying: false,
+    artist: '',
+    album: '',
+    song: '',
+    artwork: 'https://via.placeholder.com/100',
   },
 };
 
@@ -66,12 +82,23 @@ export const reducer = (state: MainStore = initialState, action: AnyAction) => {
       };
     }
 
+    // Settings actions
     case ESettingsActionsTypes.SETTINGS_SHOW_FOOTER: {
       return {
         ...state,
         settings: {
           ...state.settings,
           showFooter: payload,
+        },
+      };
+    }
+
+    case ESettingsActionsTypes.SETTINGS_CHANGE_COLOR: {
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          fontColor: payload,
         },
       };
     }
