@@ -1,4 +1,4 @@
-import { EUserActionsTypes } from './actionTypes';
+import { EUserActionsTypes, ESettingsActionsTypes } from './actionTypes';
 import { TDispatch } from '../../Store/reducer';
 
 export const userLoad = () => async (dispatch: TDispatch) => {
@@ -9,4 +9,8 @@ export const userLoad = () => async (dispatch: TDispatch) => {
     console.error(err);
     dispatch({ type: EUserActionsTypes.USER_LOAD_FAILURE, payload: 'get out of here, por favor' });
   }
+};
+
+export const changeShowFooter = (showFooter: boolean) => (dispatch: TDispatch) => {
+  dispatch({ type: ESettingsActionsTypes.SETTINGS_SHOW_FOOTER, payload: showFooter });
 };

@@ -16,6 +16,8 @@ const store = configureStore({
   },
 });
 
+reportWebVitals(console.log);
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

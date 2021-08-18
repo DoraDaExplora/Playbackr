@@ -1,14 +1,21 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { userLoad } from './Store/actions';
+import { changeShowFooter } from './Store/actions';
+import { footerSettingsSelector } from './Store/selectors';
 
 import s from './Main.module.scss';
 
 export const Main = () => {
   const dispatch = useDispatch();
-  const handleUserLoad = () => {
-    dispatch(userLoad());
+  const showFooter = useSelector(footerSettingsSelector);
+
+  // const handleUserLoad = () => {
+  //   dispatch(userLoad());
+  // };
+
+  const handleShowFooter = () => {
+    dispatch(changeShowFooter(!showFooter));
   };
 
   return (
@@ -19,7 +26,7 @@ export const Main = () => {
         </h1>
         <h2>Generate dynamic Spotify playback pages for your stream.</h2>
         {/*TODO: add the "Login with Spotify" button here.*/}
-        <button onClick={handleUserLoad}> Test button </button>
+        <button onClick={handleShowFooter}> Test button </button>
       </div>
     </div>
   );
