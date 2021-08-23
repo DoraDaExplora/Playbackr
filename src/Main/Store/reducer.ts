@@ -49,7 +49,7 @@ export const initialState: MainStore = {
     artist: '',
     album: '',
     song: '',
-    artwork: 'https://via.placeholder.com/100',
+    artwork: '',
   },
 };
 

@@ -19,7 +19,7 @@ export const Playback = () => {
   };
 
   const artworkStyle = {
-    backgroundImage: `url(${artwork})`,
+    backgroundImage: `url(${isPlaying ? artwork : 'none'})`,
   };
 
   const setUserAccessToken = () => {
