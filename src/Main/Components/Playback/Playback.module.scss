@@ -25,24 +25,15 @@
       justify-content: space-between;
       flex-grow: 1;
 
-      h2, h3 {
+      h1, h2, h3 {
         max-width: 300px;
         margin: 0;
-        padding: 0 5px 5px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-
-        &:first-child {
-          padding: 0 5px 5px;
-        }
-
-        &:last-child {
-          padding: 5px 5px 0;
-        }
       }
 
-      .PlaybackAlbum {
+      h2, h3 {
         opacity: 0.6;
       }
     }

@@ -22,8 +22,9 @@ export const Landing = () => {
           Playbackr<span className={s.LandingHighlight}>.</span>
         </h1>
         <h2>Generate dynamic Spotify playback pages for your stream.</h2>
-        {/*TODO: add the "Login with Spotify" button here.*/}
-        <button onClick={handleAuth}>test auth</button>
+        <button onClick={handleAuth} className={s.LandingLogIn}>
+          Log in with Spotify
+        </button>
       </div>
 
       <div className={s.LandingContainer}>

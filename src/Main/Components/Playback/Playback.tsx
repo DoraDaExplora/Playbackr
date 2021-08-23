@@ -60,7 +60,7 @@ export const Playback = () => {
           <div className={s.PlaybackArtistContainer}>
             <h3>{isPlaying ? artist : 'Nothing is playing'}</h3>
             <h2>{isPlaying ? song : 'Nothing is playing'}</h2>
-            <h3 className={s.PlaybackAlbum}>{isPlaying ? album : 'Nothing is playing'}</h3>
+            <h3>{isPlaying ? album : 'Nothing is playing'}</h3>
           </div>
         </div>
       </div>
