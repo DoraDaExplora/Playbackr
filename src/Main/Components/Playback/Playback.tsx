@@ -1,12 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { playbackSelector, settingsSelector } from '../../Store/selectors';
+import { setUserToken } from '../../Store/actions';
+import { setAccessToken } from '../../../Api';
 import SpotifyIcon from '../../../Assets/img/SpotifyIconBlack.png';
 
 import s from './Playback.module.scss';
 
 export const Playback = () => {
+  const dispatch = useDispatch();
   const { isPlaying, artist, song, album, artwork } = useSelector(playbackSelector);
   const { showArtwork, playbackColor } = useSelector(settingsSelector);
 
@@ -17,6 +20,20 @@ export const Playback = () => {
   const artworkStyle = {
     backgroundImage: `url(${artwork})`,
   };
+
+  const setUserAccessToken = () => {
+    const urlSearchParams = new URLSearchParams(window.location.hash);
+    const params = Object.fromEntries(urlSearchParams.entries());
+
+    const accessToken = params['#access_token'];
+
+    dispatch(setUserToken(accessToken));
+    setAccessToken(accessToken);
+  };
+
+  React.useEffect(() => {
+    setUserAccessToken();
+  });
 
   return (
     <>

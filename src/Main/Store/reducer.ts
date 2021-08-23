@@ -57,28 +57,18 @@ export const reducer = (state: MainStore = initialState, action: AnyAction) => {
   const { type, payload } = action;
 
   switch (type) {
-    case EUserActionsTypes.USER_LOAD_REQUEST: {
-      return {
-        ...state,
-        pending: !state.pending,
-        error: null,
-        userId: '',
-      };
-    }
-
-    case EUserActionsTypes.USER_LOAD_SUCCESS: {
+    case EUserActionsTypes.USER_SET_TOKEN: {
       return {
         ...state,
         userId: payload,
-        pending: false,
+        error: null,
       };
     }
 
-    case EUserActionsTypes.USER_LOAD_FAILURE: {
+    case EUserActionsTypes.USER_SET_TOKEN_FAILURE: {
       return {
         ...state,
         error: payload,
-        pending: false,
       };
     }
 

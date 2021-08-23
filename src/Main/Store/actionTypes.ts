@@ -2,9 +2,8 @@ export const storeName = 'MAIN';
 
 // Fetch data action types
 export enum EUserActionsTypes {
-  USER_LOAD_REQUEST = 'MAIN/USER_LOAD_REQUEST',
-  USER_LOAD_SUCCESS = 'MAIN/USER_LOAD_SUCCESS',
-  USER_LOAD_FAILURE = 'MAIN/USER_LOAD_FAILURE',
+  USER_SET_TOKEN = 'MAIN/USER_SET_TOKEN',
+  USER_SET_TOKEN_FAILURE = 'MAIN/USER_SET_TOKEN_FAILURE',
 }
 
 // Change settings action types

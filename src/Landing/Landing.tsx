@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import s from './Landing.module.scss';
 
 export const Landing = () => {
+  const spotifyAuthorizeLink = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=token`;
+
+  const handleAuth = () => {
+    window.location.replace(spotifyAuthorizeLink);
+  };
+
   return (
     <div className={s.Landing}>
       <div className={s.LandingContainer}>
@@ -12,7 +17,7 @@ export const Landing = () => {
         </h1>
         <h2>Generate dynamic Spotify playback pages for your stream.</h2>
         {/*TODO: add the "Login with Spotify" button here.*/}
-        <Link to="/now-playing">Test link</Link>
+        <button onClick={handleAuth}>test auth</button>
       </div>
 
       <div className={s.LandingContainer}>
