@@ -19,21 +19,6 @@
 
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
-    .LandingLogIn {
-      display: inline-flex;
-      box-sizing: border-box;
-      justify-content: center;
-      align-items: center;
-      height: 40px;
-      width: 160px;
-      border-radius: 2px;
-      border: none;
-      padding: 0 20px;
-
-      background-color: var(--base-purple);
-      color: var(--base-white);
-    }
   }
 
   .LandingHighlight {

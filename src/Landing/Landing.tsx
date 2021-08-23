@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Button } from '../Core/Components/Button';
+
 import s from './Landing.module.scss';
 
 export const Landing = () => {
@@ -22,9 +24,10 @@ export const Landing = () => {
           Playbackr<span className={s.LandingHighlight}>.</span>
         </h1>
         <h2>Generate dynamic Spotify playback pages for your stream.</h2>
-        <button onClick={handleAuth} className={s.LandingLogIn}>
-          Log in with Spotify
-        </button>
+        {/*<button onClick={handleAuth} className={s.LandingLogIn}>*/}
+        {/*  Log in with Spotify*/}
+        {/*</button>*/}
+        <Button onClick={handleAuth}>Log in with Spotify</Button>
       </div>
 
       <div className={s.LandingContainer}>
