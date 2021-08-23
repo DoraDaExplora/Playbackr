@@ -3,7 +3,13 @@ import React from 'react';
 import s from './Landing.module.scss';
 
 export const Landing = () => {
-  const spotifyAuthorizeLink = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=token`;
+  const scopes = 'user-top-read user-read-currently-playing user-read-playback-state';
+  const redirectUri = String(process.env.REACT_APP_REDIRECT_URI);
+  const spotifyAuthorizeLink = `https://accounts.spotify.com/authorize?client_id=${
+    process.env.REACT_APP_CLIENT_ID
+  }&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(
+    scopes,
+  )}&response_type=token&show_dialog=true`;
 
   const handleAuth = () => {
     window.location.replace(spotifyAuthorizeLink);

@@ -65,6 +65,12 @@ export const reducer = (state: MainStore = initialState, action: AnyAction) => {
       };
     }
 
+    case EUserActionsTypes.USER_SET_CURRENT_PLAYBACK:
+      return {
+        ...state,
+        playback: payload,
+      };
+
     case EUserActionsTypes.USER_SET_TOKEN_FAILURE: {
       return {
         ...state,

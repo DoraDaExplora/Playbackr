@@ -4,6 +4,7 @@ export const storeName = 'MAIN';
 export enum EUserActionsTypes {
   USER_SET_TOKEN = 'MAIN/USER_SET_TOKEN',
   USER_SET_TOKEN_FAILURE = 'MAIN/USER_SET_TOKEN_FAILURE',
+  USER_SET_CURRENT_PLAYBACK = 'MAIN/USER_SET_CURRENT_PLAYBACK',
 }
 
 // Change settings action types

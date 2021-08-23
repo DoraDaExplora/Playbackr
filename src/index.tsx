@@ -9,11 +9,7 @@ import configureStore from './Store/store';
 import './indexGlobal.scss';
 import './Styles/Colors.css';
 
-const store = configureStore({
-  ui: {
-    lang: 'en',
-  },
-});
+const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>

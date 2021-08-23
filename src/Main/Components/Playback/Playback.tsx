@@ -1,9 +1,10 @@
 import React from 'react';
+import { debounce } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { playbackSelector, settingsSelector } from '../../Store/selectors';
-import { setUserToken } from '../../Store/actions';
-import { setAccessToken } from '../../../Api';
+import { setCurrentPlayback, setUserToken } from '../../Store/actions';
+import { getTopArtists, setAccessToken } from '../../../Api';
 import SpotifyIcon from '../../../Assets/img/SpotifyIconBlack.png';
 
 import s from './Playback.module.scss';
@@ -31,8 +32,19 @@ export const Playback = () => {
     setAccessToken(accessToken);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getCurrentPlayback = debounce(() => {
+    dispatch(setCurrentPlayback());
+  }, 2500);
+
   React.useEffect(() => {
     setUserAccessToken();
+    getTopArtists();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  React.useEffect(() => {
+    getCurrentPlayback();
   });
 
   return (
