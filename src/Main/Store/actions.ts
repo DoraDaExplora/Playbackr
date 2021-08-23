@@ -21,6 +21,7 @@ export const setCurrentPlayback = () => async (dispatch: TDispatch) => {
     album: currentPlayback?.item?.album.name,
     song: currentPlayback?.item?.name,
     artwork: currentPlayback?.item?.album.images[1].url,
+    isPlaying: currentPlayback?.is_playing,
   };
   dispatch({ type: EUserActionsTypes.USER_SET_CURRENT_PLAYBACK, payload: formattedPlayback });
 };

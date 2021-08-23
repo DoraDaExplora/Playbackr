@@ -51,16 +51,16 @@ export const Playback = () => {
     <>
       <div className={s.PlaybackSpotifyLogoContainer}>
         <img src={SpotifyIcon} alt="Spotify icon" />
+        {isPlaying && <h3 style={userStyles}>Now playing:</h3>}
       </div>
-      {isPlaying && <h3 style={userStyles}>Now playing:</h3>}
       <div className={s.Playback} style={userStyles}>
         {showArtwork && <div className={s.PlaybackArtwork} style={artworkStyle} />}
 
         <div className={s.PlaybackInfo}>
           <div className={s.PlaybackArtistContainer}>
-            <h3>{artist ? artist : 'Nothing is playing'}</h3>
-            <h2>{song ? song : 'Nothing is playing'}</h2>
-            <h3 className={s.PlaybackAlbum}>{album ? album : 'Nothing is playing'}</h3>
+            <h3>{isPlaying ? artist : 'Nothing is playing'}</h3>
+            <h2>{isPlaying ? song : 'Nothing is playing'}</h2>
+            <h3 className={s.PlaybackAlbum}>{isPlaying ? album : 'Nothing is playing'}</h3>
           </div>
         </div>
       </div>
