@@ -1,0 +1,31 @@
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  height: 40px;
+  width: 200px;
+
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 10px 0;
+
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+
+  border: 1px solid var(--base-purple);
+  background-color: var(--base-white);
+  color: var(--base-purple);
+
+  cursor: pointer;
+
+  transition: all 250ms ease;
+
+  &:hover {
+    background-color: var(--base-purple);
+    color: var(--base-white);
+    box-shadow: rgba(191, 0, 255, 0.24) 0 3px 8px;
+  }
+}
